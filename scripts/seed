@@ -1,0 +1,7 @@
+#!/bin/bash
+#./scripts/seed MONGO_URI
+# example: ./scripts/seed "mongodb://your_admin_username:your_admin_password@localhost:27017/amppwa?authSource=admin"
+
+ls -1 scripts/seeds/*.json | while read jsonfile;
+do mongoimport --verbose --uri $1 --mode insert --numInsertionWorkers 10 --file $jsonfile;
+done

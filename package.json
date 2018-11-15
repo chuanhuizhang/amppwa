@@ -1,0 +1,45 @@
+{
+  "name": "amppwa",
+  "version": "1.0.0",
+  "description": "Core module provides APIs for amppwa applications.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "awp",
+    "pwa",
+    "api",
+    "ecommerce",
+    "hackathon"
+  ],
+  "author": "Chuanhui Zhang",
+  "devDependencies": {
+    "code": "^5.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-lab": "^1.0.7",
+    "gulp-nodemon": "^2.2.1",
+    "lab": "^15.5.0",
+    "phantom": "^6.0.3"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "blipp": "^3.0.0",
+    "boom": "^7.2.0",
+    "cheerio": "^1.0.0-rc.2",
+    "config": "^2.0.1",
+    "glue": "^5.0.0",
+    "good": "^8.1.1",
+    "good-console": "^7.1.0",
+    "good-squeeze": "^5.1.0",
+    "halson": "^3.0.0",
+    "hapi": "^17.5.3",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.8"
+  }
+}

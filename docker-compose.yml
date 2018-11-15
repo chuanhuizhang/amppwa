@@ -1,0 +1,36 @@
+version: '2'
+services:
+  nginx:
+    image: nginx
+    container_name: amppwa_proxy
+    ports:
+      - '443:443'
+    volumes:
+      - ./sslproxy:/etc/nginx/conf.d
+  amppwa_db:
+    image: mongo
+    container_name: amppwa_db
+    volumes:
+      - ./tmp/data:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 'your_admin_username'
+      MONGO_INITDB_ROOT_PASSWORD: 'your_admin_password'
+  amppwa_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/amppwa
+      - node_modules:/amppwa/node_modules
+    container_name: amppwa_app
+    ports:
+      - "3000:3000"
+    links:
+      - amppwa_db
+    environment:
+      DB_URI: 'mongodb://your_admin_username:your_admin_password@amppwa_db:27017/amppwa?authSource=admin'
+
+volumes:
+  node_modules:
