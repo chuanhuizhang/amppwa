@@ -41,9 +41,9 @@ const response = {
   modify: true,
   schema: (products) => {
     return {
-      items: {
-        values: products
-      },
+      items: [{
+          values: products
+      }],
       count: products.length,
       total: 50
     }
